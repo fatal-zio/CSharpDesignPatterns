@@ -13,3 +13,5 @@ Console.WriteLine("--------------------------------------------------");
 EudoraMailParser eudoraMailParser = new();
 Console.WriteLine(eudoraMailParser.ParseMailBody("1122334455"));
 Console.WriteLine("--------------------------------------------------");
+
+Console.ReadKey();
