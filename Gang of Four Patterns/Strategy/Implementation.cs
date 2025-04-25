@@ -48,11 +48,11 @@
         public string Name { get; set; } = name;
         public string? Description { get; set; }
 
-        public IExportService? ExportService { get; set; } = new CsvExportService();
-
-        public void Export()
+        public void Export(IExportService exportService)
         {
-            ExportService?.Export(this);
+            ArgumentNullException.ThrowIfNull(exportService);
+
+            exportService.Export(this);
         }
     }
 }

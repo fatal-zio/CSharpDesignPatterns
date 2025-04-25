@@ -2,16 +2,11 @@
 
 Console.Title = "Strategy";
 
-var order = new Order("Marvin Software", 5, "Visual Studio License")
-{
-    ExportService = new CsvExportService()
-};
-order.Export();
+var order = new Order("Marvin Software", 5, "Visual Studio License");
+order.Export(new CsvExportService());
 
-order.ExportService = new JsonExportService();
-order.Export();
+order.Export(new JsonExportService());
 
-order.ExportService = new XmlExportService();
-order.Export();
+order.Export(new XmlExportService());
 
 Console.ReadKey();
